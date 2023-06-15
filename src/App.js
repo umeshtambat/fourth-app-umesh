@@ -19,7 +19,7 @@ function ListDemo() {
     let inputElement = document.querySelector("#id1");
     let inputValue = inputElement.value;
     //cloning
-    let newList = [...list, inputValue];
+    let newList = [inputValue, ...list ];
     console.log(newList);
 
     //DOM: TRIGGER DOM
@@ -36,7 +36,7 @@ function ListDemo() {
 
       {/* c4: list */}
       {list.map((item) => (
-        <h1> Hello {item}</h1>
+        <h1> {item}</h1>
       ))}
     </>
   );

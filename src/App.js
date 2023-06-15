@@ -16,19 +16,23 @@ function ListDemo() {
 
   //c2: action member function
   let addItemAction = () => {
+    let inputElement = document.querySelector("#id1");
+    let inputValue = inputElement.value;
+    //cloning
+    let newList = [...list, inputValue];
+    console.log(newList);
 
-  //cloning
-  let newList = [...list, "mumbai"];
-  console.log(newList);
+    //DOM: TRIGGER DOM
+    setList(newList);
 
-  //DOM: TRIGGER DOM
-  setList(newList);
-};
+    inputElement.value="";
+  };
 
   return (
     <>
       {/* c3: event binding */}
-      <input type="button" value="Add New Item" onClick={addItemAction} />
+      <input type="text" id="id1" placeholder="Whatsapp......" />
+      <input type="button" value="Add Message" onClick={addItemAction} />
 
       {/* c4: list */}
       {list.map((item) => (

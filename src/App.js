@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function App() {
   return (
@@ -11,27 +11,28 @@ function App() {
 }
 
 function ListDemo() {
-  //c1: stateful variable
+  let inputRef = useRef();
   let [list, setList] = useState(["delhi"]);
 
-  //c2: action member function
   let addItemAction = () => {
-    let inputElement = document.querySelector("#id1");
-    let inputValue = inputElement.value;
+    console.log(inputRef.current);
     //cloning
-    let newList = [inputValue, ...list ];
-    console.log(newList);
+    //let newList = [inputValue, ...list];
+    
 
     //DOM: TRIGGER DOM
-    setList(newList);
+    let inputValue = inputRef.current.value;
+    let newList = [inputValue, ...list];
 
-    inputElement.value="";
+    setList(newList);  
+    inputRef.current.value="";
+   
   };
 
   return (
     <>
       {/* c3: event binding */}
-      <input type="text" id="id1" placeholder="Whatsapp......" />
+      <input type="text" i="id1" ref={inputRef} placeholder="Whatsapp......" />
       <input type="button" value="Add Message" onClick={addItemAction} />
 
       {/* c4: list */}

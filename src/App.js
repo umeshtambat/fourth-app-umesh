@@ -7,25 +7,22 @@ function App() {
     </>
   );
 }
-
 function MyTodo() {
-  // useState(100);
-  // useState("Hello");
-  // useState([]);
-  // useState({});
-
-  // let todo = {task: ""}
-  let [todo, setTodo] = useState({ task: "" });
-
-  let handleTaskAction = (e) => {
-    // console.log(e.target);
-
+  let [todo, setTodo] = useState({ task: "", description: "" });
+  let handleChnageTaskAction = (e) => {
     let newTodo = { ...todo, task: e.target.value };
+    setTodo(newTodo);
+  };
+  let handleChangeDescriptionAction = (e) => {
+    // console.log(e.target);
+    let newTodo = { ...todo, description: e.target.value };
     setTodo(newTodo);
   };
 
   let addTodoAction = () => {
-    alert(todo.task);
+    // alert(todo.task + todo.description);
+    console.log(todo);
+    // TODO :: Save this do DB
   };
 
   return (
@@ -35,11 +32,18 @@ function MyTodo() {
         type="text"
         placeholder="Enter task"
         value={todo.task}
-        onChange={handleTaskAction}
+        onChange={handleChnageTaskAction}
       />
-      <input type="button" value="Add Todo" onAuxClick={addTodoAction}/>
+      <textarea
+        className="form-control"
+        cols="30"
+        rows="3"
+        placeholder="Enter Description"
+        value={todo.description}
+        onChange={handleChangeDescriptionAction}
+      ></textarea>
+      <input type="button" value="Add Todo" onClick={addTodoAction} />
     </>
   );
 }
-
 export default App;

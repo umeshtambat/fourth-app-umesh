@@ -20,9 +20,12 @@ function MyTodo() {
   };
 
   let addTodoAction = () => {
-    // alert(todo.task + todo.description);
+  let addTodoAction = async () => {
     console.log(todo);
     // TODO :: Save this do DB
+
+    let url = `http://localhost:4000/addtodo?task=${todo.task}&description=${todo.description}`;
+    await fetch(url);
   };
 
   return (
@@ -45,5 +48,6 @@ function MyTodo() {
       <input type="button" value="Add Todo" onClick={addTodoAction} />
     </>
   );
+}
 }
 export default App;

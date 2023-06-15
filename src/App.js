@@ -1,7 +1,9 @@
+import { useState } from "react";
+
 function App() {
   return (
     <>
-      <h1>Props Demo </h1>
+      <h1>Stateful List </h1>
 
       <ListDemo />
     </>
@@ -9,30 +11,30 @@ function App() {
 }
 
 function ListDemo() {
-  let data = "Hello World";
-  let list = ["DELHI", "CALCUTTA", "CHENNAI"];
+  //c1: stateful variable
+  let [list, setList] = useState(["delhi"]);
 
-  let list1 = [];
-  for(let i=0; i<10; i++) {
-    list1.push("");
-  }
+  //c2: action member function
+  let addItemAction = () => {
 
-  
+  //cloning
+  let newList = [...list, "mumbai"];
+  console.log(newList);
+
+  //DOM: TRIGGER DOM
+  setList(newList);
+};
+
   return (
     <>
-      <h1>{data}</h1>
-      {list1.map((item) => <div>
-        <h1>Hello Universe</h1>
-      </div>)}
-      
+      {/* c3: event binding */}
+      <input type="button" value="Add New Item" onClick={addItemAction} />
 
-    
+      {/* c4: list */}
       {list.map((item) => (
-        <div><h1>Hello world </h1></div>
-        
+        <h1> Hello {item}</h1>
       ))}
-      </>
-
+    </>
   );
 }
 

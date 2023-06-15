@@ -18,15 +18,15 @@ function ListDemo() {
     console.log(inputRef.current);
     //cloning
     //let newList = [inputValue, ...list];
-    
 
+   
     //DOM: TRIGGER DOM
     let inputValue = inputRef.current.value;
     let newList = [inputValue, ...list];
 
-    setList(newList);  
-    inputRef.current.value="";
-   
+    setList(newList);
+
+    inputRef.current.value = "";
   };
 
   return (
@@ -37,7 +37,15 @@ function ListDemo() {
 
       {/* c4: list */}
       {list.map((item) => (
-        <h1> {item}</h1>
+        <div>
+          <h1> {item}</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quidem
+            voluptatem, eligendi sint consectetur temporibus omnis nisi
+            reiciendis distinctio modi, et unde sequi ea aspernatur!
+            Reprehenderit nobis sequi quod eligendi?
+          </p>
+        </div>
       ))}
     </>
   );

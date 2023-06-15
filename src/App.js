@@ -2,20 +2,27 @@ function App () {
   return (
     <>
     <h1>Props Demo </h1>
-    <MessageDemo/>
-    <MessageDemo/>
-    <MessageDemo/>
-    <MessageDemo/>
+
+    {/* <MessageDemo />
+    <MessageDemo message="Hello"/> */}
+    <MessageDemo username="umesh" />
+    <MessageDemo username="vaibhav" />
+    <MessageDemo username="tushar" />
+    
+    
     
     </>
   )
 }
 
-function MessageDemo () {
+
+//how to make this dynamic
+function MessageDemo (props) {
+  //console.log("I am insite messagedemo", props);
 
   return(
     <>
-    <h1>Hello</h1>
+    <h1>Hello {props.username}</h1>
     </>
   )
 

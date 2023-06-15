@@ -12,22 +12,27 @@ function ListDemo() {
   let data = "Hello World";
   let list = ["DELHI", "CALCUTTA", "CHENNAI"];
 
-  console.log(list);
+  let list1 = [];
+  for(let i=0; i<10; i++) {
+    list1.push("");
+  }
+
+  
   return (
     <>
       <h1>{data}</h1>
+      {list1.map((item) => <div>
+        <h1>Hello Universe</h1>
+      </div>)}
+      
 
-      {/* version.3 */}
+    
       {list.map((item) => (
-        <h1>Hello {item} </h1>
+        <div><h1>Hello world </h1></div>
+        
       ))}
+      </>
 
-      {/* version.2 */}
-      {list.map((item) => "Hello" + item)}
-
-      {/* version.1 */}
-      {list.map((item) => item)}
-    </>
   );
 }
 

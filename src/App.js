@@ -11,23 +11,21 @@ function App() {
 function ListDemo() {
   let data = "Hello World";
   let list = ["DELHI", "CALCUTTA", "CHENNAI"];
-  // for (let i = 0; i < 10; i++) {
-  //   list.push("Hello Universe");
-  // }
 
   console.log(list);
   return (
     <>
-      {/* <h1>{data}</h1>
-      <h1>{data}</h1>
-      <h1>{data}</h1>
-      <h1>{data}</h1>
-      <h1>{data}</h1> */}
-
       <h1>{data}</h1>
 
-      {list.forEach((item) => item)}
-      {/* OUTPUT BCZ OF THIS */}
+      {/* version.3 */}
+      {list.map((item) => (
+        <h1>Hello {item} </h1>
+      ))}
+
+      {/* version.2 */}
+      {list.map((item) => "Hello" + item)}
+
+      {/* version.1 */}
       {list.map((item) => item)}
     </>
   );

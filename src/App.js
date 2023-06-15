@@ -3,24 +3,32 @@ function App() {
     <>
       <h1>Props Demo </h1>
 
-      {/* <MessageDemo />
-    <MessageDemo message="Hello"/> */}
-      <MessageDemo name="umesh" email="u@gmail.com" />
-      <MessageDemo name="vaibhav" email="v@gmail.com" />
-      <MessageDemo name="tushar" email="t@gmail.com" />
+      <ListDemo />
     </>
   );
 }
 
-//how to make this dynamic
-function MessageDemo({ name, email }) {
-  //console.log("I am insite messagedemo", props);
+function ListDemo() {
+  let data = "Hello World";
+  let list = ["DELHI", "CALCUTTA", "CHENNAI"];
+  // for (let i = 0; i < 10; i++) {
+  //   list.push("Hello Universe");
+  // }
 
+  console.log(list);
   return (
     <>
-      <h1>
-        Hello  {email} {name}
-      </h1>
+      {/* <h1>{data}</h1>
+      <h1>{data}</h1>
+      <h1>{data}</h1>
+      <h1>{data}</h1>
+      <h1>{data}</h1> */}
+
+      <h1>{data}</h1>
+
+      {list.forEach((item) => item)}
+      {/* OUTPUT BCZ OF THIS */}
+      {list.map((item) => item)}
     </>
   );
 }

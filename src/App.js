@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+
 function App() {
   return (
     <>
@@ -7,12 +8,15 @@ function App() {
     </>
   );
 }
+
 function MyTodo() {
   let [todo, setTodo] = useState({ task: "", description: "" });
+
   let handleChnageTaskAction = (e) => {
     let newTodo = { ...todo, task: e.target.value };
     setTodo(newTodo);
   };
+
   let handleChangeDescriptionAction = (e) => {
     // console.log(e.target);
     let newTodo = { ...todo, description: e.target.value };
@@ -20,7 +24,6 @@ function MyTodo() {
   };
 
   let addTodoAction = () => {
-    // alert(todo.task + todo.description);
     console.log(todo);
     // TODO :: Save this do DB
   };
@@ -34,6 +37,7 @@ function MyTodo() {
         value={todo.task}
         onChange={handleChnageTaskAction}
       />
+
       <textarea
         className="form-control"
         cols="30"
@@ -42,8 +46,10 @@ function MyTodo() {
         value={todo.description}
         onChange={handleChangeDescriptionAction}
       ></textarea>
+
       <input type="button" value="Add Todo" onClick={addTodoAction} />
     </>
   );
 }
+
 export default App;

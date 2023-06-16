@@ -18,7 +18,7 @@ function MyTodo() {
   let addTodoAction = async () => {
     console.log(todo);
 
-    let url = `http://localhost:4000/addtodo?task=${todo.task}&description=${todo.description}`;
+    let url = `http://localhost:1000/addtodo?task=${todo.task}&description=${todo.description}`;
     await fetch(url);
 
     // clear the box

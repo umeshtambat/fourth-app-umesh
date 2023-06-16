@@ -4,7 +4,7 @@ function MyTodoList() {
   let [todoList, setTodoList] = useState([]);
 
   let getAllTodoAction = async () => {
-    let url = `http://localhost:4000/find-all-todo`;
+    let url = `http://localhost:1000/find-all-todo`;
     let res = await fetch(url);
     let list = await res.json();
 

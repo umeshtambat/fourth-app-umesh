@@ -30,7 +30,7 @@ function MyRegistration() {
 
   let registerAction = async () => {
     // BACKEND
-    let url = `http://localhost:4000/adduser?username=${user.username}&password=${user.password}&email=${user.email}&mobile=${user.mobile}`;
+    let url = `http://localhost:1000/adduser?username=${user.username}&password=${user.password}&email=${user.email}&mobile=${user.mobile}`;
     await fetch(url);
 
     let newuser = {

@@ -1,7 +1,8 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MyTodo from "./pages/MyTodo";
 import MyRegistration from "./pages/MyRegistration";
 import MyNavigationLinks from "./pages/MyNavigationLinks";
+import MyNavigationLinksUsingButton from "./pages/MyNavigationLinksUsingButton";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Routes>
 
-        <MyNavigationLinks />
+        <MyNavigationLinksUsingButton />
       </BrowserRouter>
     </>
   );
